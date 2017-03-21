@@ -1,0 +1,52 @@
+---
+title: "Using the ClinicalTrialsAPI R package"
+author: "Sean Davis"
+date: "`r format(Sys.Date(), '%A, %B %d, %Y')`"
+output:
+  BiocStyle::html_document:
+    df_print: paged
+vignette: >
+  %\VignetteIndexEntry{Using the ClinicalTrialsAPI R package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# ClinicalTrialsAPI
+
+## Installation
+
+
+
+```{r setup}
+#library(devtools)
+#install_github('seandavi/ClinicalTrialsAPI')
+library(ClinicalTrialsAPI)
+```
+
+# Examples
+
+## Find available fields for filtering
+
+```{r}
+head(fields())
+```
+
+## Search for terms in the index
+
+```{r}
+lookup_term('panc')
+lookup_term('TP53')
+```
+
+## Search
+
+```{r}
+res = ct_search(eligibility.structured.gender="female",
+       include="nct_id")
+str(res)
+res = ct_search(record_verification_date_gte="2016-08-25")
+res$count
+res = ct_search(sites.org_coordinates_lat=39.1292,
+             sites.org_coordinates_lon=-77.2953,
+             sites.org_coordinates_dist="100mi")
+```

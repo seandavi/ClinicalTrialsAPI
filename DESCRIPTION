@@ -1,0 +1,17 @@
+Package: ClinicalTrialsAPI
+Type: Package
+Title: Access the NIH Clinical Trials REST API
+Version: 0.1.0
+Authors@R: c(person("Davis", "Sean", email="sdavis2@mail.nih.gov",
+        role=c("aut", "cre")))
+Description: The NIH Clinical Trials REST API represents an alternative 
+    to the clinicaltrials.gov search functionality. This package is 
+    a simple client to the API. 
+Depends:
+  magrittr
+License: MIT
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
+
