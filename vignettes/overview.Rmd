@@ -13,6 +13,8 @@ vignette: >
 
 # ClinicalTrialsAPI
 
+Access the [NIH Clinical Trials REST API](https://clinicaltrialsapi.cancer.gov) from R.
+
 ## Installation
 
 
